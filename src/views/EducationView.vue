@@ -2,9 +2,7 @@
   <div>
     <video
       class="bg-videoedu"
-      :src="
-        require('https://raw.githubusercontent.com/leodave/Profile-Pics/main/Chain - 25380.mp4')
-      "
+      :src="require('@/assets/Chain - 25380.mp4')"
       ref="videoPlayer"
       autoplay
       loop

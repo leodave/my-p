@@ -30,9 +30,7 @@
     <v-main>
       <video
         class="bg-video"
-        :src="
-          require('https://raw.githubusercontent.com/leodave/Profile-Pics/main/Chain - 25380.mp4')
-        "
+        :src="require('@/assets/Chain - 25380.mp4')"
         ref="videoPlayer"
         autoplay
         loop

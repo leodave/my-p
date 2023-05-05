@@ -12,9 +12,7 @@
       <button @click="playvid">
         <video
           class="bg-videoplayer"
-          :src="
-            require('https://raw.githubusercontent.com/leodave/Profile-Pics/main/david-video.mp4')
-          "
+          :src="require('@/assets/david-video (1).mp4')"
           ref="videoPlayer"
           loop
         ></video>
