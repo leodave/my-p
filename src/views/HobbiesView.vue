@@ -1,119 +1,49 @@
 <template>
-  <div>
-    <h1 class="football white--text">
-      Football has always been my sport from a young age. always loved and
-      played the game with my friends and teammates in amateur leagues. i have
-      put below some video of mine for you to enjoy a little!!!!!
-      &nbsp;&nbsp;&nbsp;
-      <h1>Press Video to Play!!!</h1>
-    </h1>
+  <v-container class="py-12">
+    <h2 class="display-1 primary--text font-weight-bold mb-8 text-center">Beyond Engineering</h2>
 
-    <div>
-      <button @click="playvid">
-        <video
-          class="bg-videoplayer"
-          :src="require('@/assets/david-video (1).mp4')"
-          ref="videoPlayer"
-          loop
-        ></video>
-      </button>
-    </div>
-    <h1 class="paddle white--text">
-      Paddling is one of the intersting hobbies I discovered recently. It is an
-      amazing experience to have, early in the morning with the beutiful rising
-      sun and sound of the ocean. &nbsp;&nbsp;&nbsp;
-    </h1>
-    <div class="paddling">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/paddle1.jpg"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
+    <v-row>
+      <v-col cols="12" md="6">
+        <v-card color="secondary" dark class="pa-4 mb-6">
+          <v-card-title class="headline primary--text">Football</v-card-title>
+          <v-card-text class="white--text">
+            <p>Football has always been my passion from a young age. I love playing the game with friends and teammates in amateur leagues. It keeps me active
+              and teaches me about teamwork and strategy.</p>
+            <v-sheet color="black" class="pa-2 rounded-lg">
+              <video
+                  width="100%"
+                  controls
+                  :src="require('@/assets/david-video (1).mp4')"
+                  class="rounded"
+              ></video>
+            </v-sheet>
+          </v-card-text>
+        </v-card>
+      </v-col>
 
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/paddle2.jpg"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-  </div>
+      <v-col cols="12" md="6">
+        <v-card color="secondary" dark class="pa-4 mb-6">
+          <v-card-title class="headline primary--text">Paddling</v-card-title>
+          <v-card-text class="white--text">
+            <p>Paddling is a more recent hobby. There is nothing like the experience of being on the water early in the morning, watching the sunrise and
+              listening to the ocean.</p>
+            <v-carousel hide-delimiters height="400">
+              <v-carousel-item
+                  src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/paddle1.jpg"
+              ></v-carousel-item>
+              <v-carousel-item
+                  src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/paddle2.jpg"
+              ></v-carousel-item>
+            </v-carousel>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+
 <script>
 export default {
-  name: "HobbiesView",
-  data() {
-    return {
-      playing: true,
-    };
-  },
-  onmounted() {
-    this.$refs.videoPlayer.play();
-  },
-
-  methods: {
-    playvid() {
-      if (this.$refs.videoPlayer.paused) {
-        this.$refs.videoPlayer.play();
-        console.log("plaay");
-      } else {
-        this.$refs.videoPlayer.pause();
-      }
-    },
-  },
+  name: 'HobbiesView',
 };
 </script>
-<style>
-.bg-videoplayer {
-  position: absolute;
-  top: 30%;
-  left: 0;
-  min-width: 100%;
-  height: 80%;
-  overflow: hidden;
-}
-
-.bg-videoplayer video {
-  position: absolute;
-  top: 80%;
-  left: 100%;
-  min-width: 100%;
-  min-height: 300%;
-  width: auto;
-  height: 500px;
-  z-index: -100;
-  transform: translateX(-50%) translateY(-50%);
-}
-.football {
-  font-style: inherit;
-  font-weight: 25;
-  font-size: x-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
-  position: absolute;
-  left: 10%;
-  top: 10%;
-  width: 85%;
-}
-.paddle {
-  font-style: inherit;
-  font-weight: 25;
-  font-size: x-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
-  position: absolute;
-  left: 10%;
-  top: 120%;
-  width: 85%;
-}
-.paddling {
-  position: absolute;
-  left: 30%;
-  top: 140%;
-  width: 25%;
-  height: 60%;
-}
-</style>

@@ -1,251 +1,70 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark class="appbar">
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/photo_1.jpeg"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-btn
-          v-if="showMenu"
-          x-large
-          success
-          @click="toggleToolbar"
-          width="150"
-        >
-          Menu
-        </v-btn>
-      </div>
-      <v-spacer />
-      <v-btn x-large success @click="homePage">Home-Page</v-btn>
-
+    <v-app-bar app color="secondary" dark elevate-on-scroll>
+      <v-avatar size="40" class="mr-3">
+        <v-img src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/photo_1.jpeg"/>
+      </v-avatar>
+      <v-toolbar-title class="font-weight-bold">Dawit Elias</v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-btn text to="/" class="hidden-sm-and-down">Home</v-btn>
+      <v-btn text to="/experience" class="hidden-sm-and-down">Experience</v-btn>
+      <v-btn text to="/education" class="hidden-sm-and-down">Education</v-btn>
+      <v-btn text to="/hobbies" class="hidden-sm-and-down">Hobbies</v-btn>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on" class="hidden-md-and-up">
+            <v-icon>mdi-menu</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item to="/">
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/experience">
+            <v-list-item-title>Experience</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/education">
+            <v-list-item-title>Education</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/hobbies">
+            <v-list-item-title>Hobbies</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
 
-    <v-main>
-      <video
-        class="bg-video"
-        :src="require('@/assets/Chain - 25380.mp4')"
-        ref="videoPlayer"
-        autoplay
-        loop
-        muted
-      ></video>
-
-      <div class="content">
-        <!--<div v-show="showInfo">
-        <v-row>
-      <v-col cols="4" class="info mt-15"><h1>suiiii</h1></v-col></v-row>
-        </div>-->
-      </div>
-
-      <span v-show="btn">
-        <v-card
-          elevation="24"
-          color="blue"
-          height="420"
-          width="200"
-          outlined
-          tile
-          style="position: absolute; z-index: 1"
-        >
-          <!--<v-btn
-            x-large
-            success
-            class="mt-5 ml-5"
-            width="150"
-            height="30"
-            @click="menuButtons"
-          >
-            <router-link to="/aboutme" class="text-decoration">
-              About Me
-            </router-link>
-          </v-btn>
-        -->
-          <v-btn
-            x-large
-            success
-            class="mt-5 ml-5"
-            width="150"
-            height="35"
-            @click="menuButtons"
-          >
-            <router-link to="/education" class="text-decoration">
-              Education &
-              <br />
-              Certifications
-            </router-link>
-          </v-btn>
-          <v-btn
-            x-large
-            success
-            class="mt-5 ml-5"
-            width="150"
-            height="35"
-            @click="menuButtons"
-          >
-            <router-link to="/experience" class="text-decoration">
-              Experience &
-              <br />
-              Projects
-            </router-link>
-          </v-btn>
-          <!--
-          <v-btn
-            x-large
-            success
-            class="mt-5 ml-5"
-            width="150"
-            height="30"
-            @click="menuButtons"
-          >
-            <router-link to="/projects" class="text-decoration">
-              Projects
-            </router-link>
-          </v-btn>-->
-
-          <v-btn
-            x-large
-            success
-            class="mt-5 ml-5 white blue--text"
-            width="150"
-            height="30"
-            @click="menuButtons"
-            href="https://www.linkedin.com/in/dawit-elias/"
-            target="_blank"
-            text
-          >
-            LinkedIN
-          </v-btn>
-          <v-btn
-            x-large
-            success
-            class="mt-5 ml-5 white blue--text"
-            width="150"
-            height="30"
-            @click="menuButtons"
-            href="https://github.com/leodave"
-            target="_blank"
-            text
-          >
-            GitHub
-          </v-btn>
-          <v-btn
-            x-large
-            success
-            class="mt-5 ml-5 white blue--text"
-            width="150"
-            height="30"
-            @click="menuButtons"
-            href="https://docs.google.com/document/d/1X-29FrbdgjlogSnUXZC605zlosmbaKq4tKx36oCSJww/edit"
-            target="_blank"
-            text
-          >
-            CV
-          </v-btn>
-          <v-btn
-            x-large
-            success
-            class="mt-5 ml-5"
-            width="150"
-            height="30"
-            @click="menuButtons"
-          >
-            <router-link to="/hobbies" class="text-decoration">
-              Hobbies
-            </router-link>
-          </v-btn>
-          <v-card
-            class="mt-5 ml-5 mr-6 white blue--text"
-            style="font-size: 18px"
-          >
-            (+34)722-522-442
-          </v-card>
-          <v-card
-            class="mt-5 ml-5 mr-6 white blue--text"
-            style="font-size: 13px"
-          >
-            dawitelias735@gmail.com
-          </v-card>
-        </v-card>
-
-        <router-view />
-      </span>
-      <span v-show="!btn">
-        <router-view />
-      </span>
+    <v-main class="bg-dark">
+      <router-view/>
     </v-main>
+
+    <v-footer padless color="secondary" dark>
+      <v-col class="text-center py-4" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Dawit Elias</strong>
+        <div class="mt-2">
+          <v-btn icon href="https://github.com/leodave" target="_blank">
+            <v-icon>mdi-github</v-icon>
+          </v-btn>
+          <v-btn icon href="https://www.linkedin.com/in/dawit-elias/" target="_blank">
+            <v-icon>mdi-linkedin</v-icon>
+          </v-btn>
+          <v-btn icon href="mailto:dawitelias733@gmail.com">
+            <v-icon>mdi-email</v-icon>
+          </v-btn>
+        </div>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: "App",
-  mounted() {
-    this.$refs.videoPlayer.volume = 0;
-  },
-
-  data() {
-    return {
-      btn: true,
-      showMenu: true,
-    };
-  },
-  methods: {
-    async toggleToolbar() {
-      this.btn = !this.btn;
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-    async menuButtons() {
-      //this.showMenu=false;
-      this.btn = !this.btn;
-    },
-    async homePage() {
-      this.$router.push("/");
-      //this.showMenu=!this.showMenu;
-    },
-  },
+  name: 'App',
 };
 </script>
+
 <style>
-.appbar {
-  height: 200px;
-  z-index: 100;
-}
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 550%;
-  overflow: hidden;
-}
-
-.bg-video video {
-  position: absolute;
-  top: 300%;
-  left: 300%;
-  min-width: 100%;
-  min-height: 510%;
-  width: auto;
-  height: 550px;
-  z-index: -100;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-}
-.text-decoration {
-  text-decoration: none;
-}
-.bot {
-  color: white;
+.bg-dark {
+  background-color: #121212;
+  min-height: 100vh;
 }
 </style>

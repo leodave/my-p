@@ -1,235 +1,130 @@
 <template>
-  <v-container class="cont ml-15 mb-15">
-    <div class="ml-15">
-      <div>
-        <span class="back">
-          <v-spacer />
-          <span>D</span>
-          <span>A</span>
-          <span>W</span>
-          <span>I</span>
-          <span>T</span>
-          <span></span>
-          <span>E</span>
-          <span>L</span>
-          <span>I</span>
-          <span>A</span>
-          <span>S</span>
-        </span>
-        <img
-          class="circle-frame1"
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/photo_1.jpeg"
-          width="200"
-          height="300"
-          style="position: absolute; z-index: 0.5; top: 65%; left: 40%"
-          @mouseover="hover1 = true"
-          @mouseleave="hover1 = false"
-          :style="{ transform: hover1 ? 'scale(1.2)' : 'scale(1)' }"
-        />
-        <router-link to="/education" class="text-decoration">
-          <img
-            class="circle-frame"
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/education.jpeg"
-            width="400"
-            height="300"
-            style="position: absolute; z-index: 0.5; top: 115%; left: 20%"
-            @mouseover="hover = true"
-            @mouseleave="hover = false"
-            :style="{ transform: hover ? 'scale(1.2)' : 'scale(1)' }"
-          />
-        </router-link>
-        <router-link to="/experience" class="text-decoration">
-          <img
-            class="circle-frame"
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/experience.jpeg"
-            width="400"
-            height="300"
-            style="position: absolute; z-index: 0.5; top: 115%; left: 60%"
-            @mouseover="hover2 = true"
-            @mouseleave="hover2 = false"
-            :style="{ transform: hover2 ? 'scale(1.2)' : 'scale(1)' }"
-          />
-        </router-link>
-        <router-link to="/hobbies" class="text-decoration">
-          <img
-            class="circle-frame"
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/hobbie.jpeg"
-            width="400"
-            height="300"
-            style="position: absolute; z-index: 0.5; top: 180%; left: 40%"
-            @mouseover="hover3 = true"
-            @mouseleave="hover3 = false"
-            :style="{ transform: hover3 ? 'scale(1.2)' : 'scale(1)' }"
-          />
-        </router-link>
-        <a
-          href="https://github.com/leodave/My-Certifications/blob/main/updated-dave.pdf"
-          target="_blank"
-        >
-          <img
-            class="circle-frame"
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/cv.jpeg"
-            width="400"
-            height="300"
-            style="position: absolute; z-index: 0.5; top: 245%; left: 20%"
-            @mouseover="hover4 = true"
-            @mouseleave="hover4 = false"
-            :style="{ transform: hover4 ? 'scale(1.2)' : 'scale(1)' }"
-          />
-        </a>
-        <a href="https://github.com/leodave" target="_blank">
-          <img
-            class="circle-frame"
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/github.png"
-            width="400"
-            height="300"
-            style="position: absolute; z-index: 0.5; top: 245%; left: 60%"
-            @mouseover="hover5 = true"
-            @mouseleave="hover5 = false"
-            :style="{ transform: hover5 ? 'scale(1.2)' : 'scale(1)' }"
-          />
-        </a>
-        <div class="cv"></div>
-        <div class="cv"></div>
-      </div>
-    </div>
+  <v-container class="py-12">
+    <!-- Hero Section -->
+    <v-row align="center" justify="center" class="mb-12">
+      <v-col cols="12" md="4" class="text-center">
+        <v-avatar size="250" class="elevation-12 mb-4">
+          <v-img src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/photo_1.jpeg"/>
+        </v-avatar>
+      </v-col>
+      <v-col cols="12" md="8" class="text-center text-md-left">
+        <h1 class="display-2 font-weight-bold primary--text mb-2">Dawit Elias</h1>
+        <h2 class="headline font-weight-medium white--text mb-4">Senior Software Engineer</h2>
+        <p class="subtitle-1 white--text mb-6">
+          5+ years of experience designing, developing and operating scalable, cloud-native backend systems.
+          Specialised in Java, Spring Boot and distributed microservices.
+        </p>
+        <div class="d-flex flex-wrap justify-center justify-md-start">
+          <v-btn large color="primary" class="mr-4 mb-2 black--text" href="mailto:dawitelias733@gmail.com">
+            <v-icon left>mdi-email</v-icon>
+            Hire Me
+          </v-btn>
+          <v-btn large outlined color="primary" class="mr-4 mb-2" href="https://github.com/leodave" target="_blank">
+            <v-icon left>mdi-github</v-icon>
+            GitHub
+          </v-btn>
+          <v-btn large outlined color="primary" class="mb-2" href="https://www.linkedin.com/in/dawit-elias/" target="_blank">
+            <v-icon left>mdi-linkedin</v-icon>
+            LinkedIn
+          </v-btn>
+        </div>
+      </v-col>
+    </v-row>
+
+    <!-- Professional Summary -->
+    <v-row class="mb-12">
+      <v-col cols="12">
+        <v-card color="secondary" dark class="pa-6">
+          <h3 class="headline primary--text mb-4">Professional Summary</h3>
+          <p class="body-1 text-justify">
+            Senior Software Engineer with extensive experience in designing, developing and operating scalable, cloud-native backend systems for enterprise and
+            high-traffic platforms. Specialised in Java, Spring Boot and distributed microservices, with experience delivering payment, fraud detection and
+            gaming platforms supporting millions of users and high transaction volumes.
+          </p>
+          <p class="body-1 text-justify">
+            Strong background in backend architecture, RESTful API design, asynchronous messaging, event-driven systems, database optimisation and cloud-native
+            deployments using Kubernetes and GitOps practices.
+          </p>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <!-- Core Skills -->
+    <v-row class="mb-12">
+      <v-col cols="12">
+        <h3 class="headline primary--text mb-6 text-center">Core Competencies</h3>
+      </v-col>
+      <v-col v-for="(skillGroup, index) in skillGroups" :key="index" cols="12" sm="6" md="4" class="mb-4">
+        <v-card height="100%" color="secondary" dark hover>
+          <v-card-title class="primary--text font-weight-bold">
+            <v-icon left color="primary">{{ skillGroup.icon }}</v-icon>
+            {{ skillGroup.title }}
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text>
+            <v-chip v-for="skill in skillGroup.skills" :key="skill" small class="ma-1" color="primary" outlined>
+              {{ skill }}
+            </v-chip>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-  name: "HomeWorld",
-
+  name: 'HomeWorld',
   data() {
     return {
-      hover: false,
-      hover2: false,
-      hover3: false,
-      hover4: false,
-      hover5: false,
-      imageSrc:
-        "https://raw.githubusercontent.com/leodave/Profile-Pics/main/education.jpeg",
-      imageSrc2:
-        "https://raw.githubusercontent.com/leodave/Profile-Pics/main/experience.jpeg",
-      imageSrc3:
-        "https://raw.githubusercontent.com/leodave/Profile-Pics/main/hobbie.jpeg",
-      imageSrc4:
-        "https://raw.githubusercontent.com/leodave/Profile-Pics/main/cv.jpeg",
-      imageSrc5:
-        "https://raw.githubusercontent.com/leodave/Profile-Pics/main/github.png",
-      imageSrc1:
-        "https://raw.githubusercontent.com/leodave/Profile-Pics/main/photo_1.jpeg",
+      skillGroups: [
+        {
+          title: 'Backend Engineering',
+          icon: 'mdi-server',
+          skills: ['Java 17/21', 'Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Hibernate', 'REST APIs', 'JWT', 'OAuth2'],
+        },
+        {
+          title: 'Architecture',
+          icon: 'mdi-pillar',
+          skills: ['Microservices', 'Event-Driven', 'DDD', 'SOLID', 'Design Patterns', 'Scalability', 'Fault Tolerance'],
+        },
+        {
+          title: 'Cloud & DevOps',
+          icon: 'mdi-cloud',
+          skills: ['Docker', 'Kubernetes', 'Helm', 'Argo CD', 'GitOps', 'Jenkins', 'CI/CD', 'Maven'],
+        },
+        {
+          title: 'Databases',
+          icon: 'mdi-database',
+          skills: ['PostgreSQL', 'MySQL', 'Elasticsearch', 'JPA', 'Query Optimisation', 'Relational Modelling'],
+        },
+        {
+          title: 'Testing & Messaging',
+          icon: 'mdi-test-tube',
+          skills: ['TDD', 'JUnit 5', 'Mockito', 'Cypress', 'RabbitMQ', 'Asynchronous Processing'],
+        },
+        {
+          title: 'Frontend',
+          icon: 'mdi-web',
+          skills: ['React (Next)', 'TypeScript', 'JavaScript', 'Vue.js', 'Tailwind CSS'],
+        },
+        {
+          title: 'AI Engineering',
+          icon: 'mdi-robot',
+          skills: ['Claude', 'ChatGPT', 'Perplexity', 'Prompt Engineering', 'AI-assisted Development'],
+        },
+      ],
     };
   },
 };
 </script>
-<style>
-.info {
-  color: aqua;
-}
-.cont {
-  background: transparent;
+
+<style scoped>
+.v-card {
+  transition: transform .2s;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-html {
-  height: 90%;
-}
-
-body {
-  background: #3f485b;
-
-  height: 90%;
-}
-.back {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Roboto";
-}
-.back span {
-  font-size: 3em;
-  color: #f2c640;
-  background: #262b37;
-  display: table-cell;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 5px 0 #ccc;
-  padding: 0 20px;
-  line-height: 100px;
-  animation: jumb 2s infinite;
-}
-@keyframes jumb {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-50px);
-    box-shadow: 0 15px 0 rgb(242, 198, 64);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-.back span:nth-child(1) {
-  animation-delay: 0s;
-}
-.back span:nth-child(2) {
-  animation-delay: 0.1s;
-}
-.back span:nth-child(3) {
-  animation-delay: 0.2s;
-}
-.back span:nth-child(4) {
-  animation-delay: 0.3s;
-}
-.back span:nth-child(5) {
-  animation-delay: 0.4s;
-}
-.back span:nth-child(6) {
-  animation-delay: 0.5s;
-}
-.back span:nth-child(7) {
-  animation-delay: 0.6s;
-}
-.back span:nth-child(8) {
-  animation-delay: 0.5s;
-}
-.back span:nth-child(9) {
-  animation-delay: 0.8s;
-}
-.back span:nth-child(10) {
-  animation-delay: 0.9s;
-}
-.back span:nth-child(11) {
-  animation-delay: 0.1s;
-}
-.back span:nth-child(12) {
-  animation-delay: 0.11s;
-}
-.circle-frame {
-  border-radius: 50%;
-  border: 5px solid white;
-  overflow: hidden;
-  width: 400px;
-  height: 300px;
-}
-
-.circle-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.circle-frame1 {
-  border-radius: 50%;
-  border: 5px solid white;
-  overflow: hidden;
-  width: 300px;
-  height: 300px;
-}
-
-.circle-frame1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.v-card:hover {
+  transform: translateY(-5px);
 }
 </style>

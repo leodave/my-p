@@ -1,615 +1,146 @@
 <template>
-  <div>
-    <img
-      src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/ferchau.png"
-      width="180"
-      height="100"
-      style="position: absolute; z-index: 0.5; top: 5%; left: 5%"
-    />
-    <h1 class="qtr white--text">
-      <a href="https://www.ferchau.com/de/de" target="_blank">
-        Ferchau Engineering
-      </a>
-      (Barcelona, Spain) - Software Engineer
-      <br />
-      <div style="font-size: 35px">October 2022 - July 2023</div>
-    </h1>
-    <h1 class="qtE black white--text">
-      During my long internship program with Ferchau Engineering, I took part in
-      multiple desktop application projects. We mainly emplemented the QT/QML
-      framework which sits on C++ with the conjuncion of javascript and phyton.
-    </h1>
-    <h1 class="qtE2 black white--text">
-      QT/QML helps develop desktop and mobile applications for all kind of
-      operating systems with no or a little change in the line of code. It can
-      also be integrated with openGL to develop front-end designs. Below I
-      listed some of my personal learning projects.
-    </h1>
-    <h1 class="qtr2 white--text">
-      Projects
-      <a href="https://github.com/leodave" target="_blank">(GitHub)</a>
-    </h1>
-    <h1 class="qtE2 black white--text">
-      QT/QML helps develop desktop and mobile applications for all kind of
-      operating systems with no or a little change in the line of code. It can
-      also be integrated with openGL to develop front-end designs.
-    </h1>
-    <h1 class="pro white--text">Flappy Birds</h1>
-    <h1 class="prow black white--text">
-      I transformed Flappy birds the very famous mobile game into a desktop
-      applications with my ouwn custom features usng the QML framework.
-    </h1>
-    <div class="flappy">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/flappybirds1.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
+  <v-container class="py-12">
+    <h2 class="display-1 primary--text font-weight-bold mb-8 text-center">Professional Experience</h2>
 
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/flappybirds2.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-    <h1 class="pro2 white--text">Contact Generator</h1>
-    <h1 class="prow2 black white--text">
-      This is a desktop application that helps you generate contacts
-      automatically in high numbers with just small details of input required
-      depending on the contractor. This app facilitates the contact process
-      between employer and employee.
-    </h1>
-    <div class="contract">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/contact generator2.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
+    <v-timeline :dense="$vuetify.breakpoint.smAndDown">
+      <v-timeline-item
+          v-for="(job, i) in experience"
+          :key="i"
+          color="primary"
+          fill-dot
+          large
+      >
+        <template v-slot:opposite>
+          <span class="headline font-weight-bold white--text" v-text="job.period"></span>
+        </template>
+        <v-card color="secondary" dark class="elevation-4">
+          <v-card-title class="headline primary--text">
+            {{ job.role }}
+            <v-spacer></v-spacer>
+            <span class="subtitle-2 white--text hidden-md-and-up">{{ job.period }}</span>
+          </v-card-title>
+          <v-card-subtitle class="white--text font-weight-bold pt-1">
+            <a :href="job.link" target="_blank" class="primary--text text-decoration-none">{{ job.company }}</a>
+            - {{ job.location }}
+          </v-card-subtitle>
+          <v-card-text class="white--text">
+            <ul class="mt-2">
+              <li v-for="(point, j) in job.points" :key="j" class="mb-2">{{ point }}</li>
+            </ul>
+            <div class="mt-4">
+              <strong>Technologies:</strong>
+              <v-chip v-for="tech in job.tech" :key="tech" x-small class="ma-1" color="primary" outlined>
+                {{ tech }}
+              </v-chip>
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-timeline-item>
+    </v-timeline>
 
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/contact generator3.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/contract generator.png"
-            style="width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/addnewmovie.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-    <h1 class="pro3 white--text">Drawing App</h1>
-    <h1 class="prow3 black white--text">
-      This is a desktop app which helps to draw diferent 2D graphics with colors
-      of our choice. It also saves the painted file in the local device.
-    </h1>
-    <div class="drawing">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/drawer1.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/drawer2.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/drawer3.png"
-            style="width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-    <h1 class="pro4 white--text">User Saver</h1>
-    <h1 class="prow4 black white--text">
-      This is an app used to register, sign in and save user information with
-      their photo, email and all neccessary informations required.
-    </h1>
-    <div class="userSave" style="height: 20%">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/user saver login.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/new user.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/user pic.png"
-            style="width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-    <h1 class="pro5 white--text">Table Tenis</h1>
-    <h1 class="prow5 black white--text">
-      This is a simple table tennis app or a pingpong app that has two players
-      and allows you to to record the winner while playing.
-    </h1>
-    <div class="tennis">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/tennis1.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/tennis2.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-    <img
-      src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/freelance.jpeg"
-      width="180"
-      height="100"
-      style="position: absolute; z-index: 0.5; top: 290%; left: 5%"
-    />
-    <h1 class="qtr3 white--text">
-      Freelancer, Remote — Full-stack Web Developer
-      <br />
-      <div style="font-size: 35px">January 2022 - Present</div>
-    </h1>
-    <h1 class="free black white--text">
-      I have been developing my programmig skills through self-teaching and
-      being part of different teams. the following are some of my projects that
-      help me improve my knowledge in full-stack development.
-    </h1>
-    <h1 class="full white--text">Cinema Reservation</h1>
-    <h1 class="fullw black white--text">
-      It is an app that helps you reserve a seat in a cinema with registering as
-      a user. It also have an admin panel which lets you manage the movies,price
-      and number of seats. It was done using VueJs for front-end, NestTs for
-      back-end mongoDB as the database.
-    </h1>
-    <div class="cinema">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/touristgidehomepage.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/touristguidelogedhome.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/tourgideregister.png"
-            style="width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/addnewmovie.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-    <h1 class="full3 white--text">E-Commerce</h1>
-    <h1 class="fullw3 black white--text">
-      It is a common E-commerce app, that lets you shop products online done
-      using Laravel(PHP) for the back-end, Html and Css for the front end and
-      mysql as the database.
-    </h1>
-    <div class="commerce">
-      <v-carousel>
-        <v-carousel-item cover>
-          <img
-            src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/laravelecomerce.png"
-            style="max-width: 100%; height: 100%"
-          />
-        </v-carousel-item>
-      </v-carousel>
-    </div>
-    <h1 class="full2 white--text">League Pong</h1>
-    <h1 class="fullw2 black white--text">
-      It is an app that lets you organize PingPong league with your friends,
-      family or strangers through out your city. since currently me and my
-      collegues who made the app live in Barcelona, we implemented the map where
-      you can find tables in this city but can be broaded.
-    </h1>
-    <div class="leaguepong">
-      <v-carousel>
-        <v-carousel-item
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/leaguepong login.png"
-          cover
-        ></v-carousel-item>
-
-        <v-carousel-item
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/createuser leaguepong.png"
-          cover
-        ></v-carousel-item>
-
-        <v-carousel-item
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/menuLeagoepong.png"
-          cover
-        ></v-carousel-item>
-        <v-carousel-item
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/mapleaguepong.png"
-          cover
-        ></v-carousel-item>
-        <v-carousel-item
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/others leaguepong.png"
-          cover
-        ></v-carousel-item>
-        <v-carousel-item
-          src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/profileleaguepong.png"
-          cover
-        ></v-carousel-item>
-      </v-carousel>
-    </div>
-  </div>
+    <h2 class="display-1 primary--text font-weight-bold mt-16 mb-8 text-center">Featured Projects</h2>
+    <v-row>
+      <v-col v-for="(project, i) in projects" :key="i" cols="12" md="6">
+        <v-card color="secondary" dark height="100%" hover>
+          <v-img :src="project.image" height="250px"></v-img>
+          <v-card-title class="primary--text headline">{{ project.title }}</v-card-title>
+          <v-card-text>
+            <p class="white--text">{{ project.description }}</p>
+            <div class="mt-2">
+              <v-chip v-for="tag in project.tags" :key="tag" x-small class="ma-1" color="accent" outlined>
+                {{ tag }}
+              </v-chip>
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+
 <script>
 export default {
-  name: "ExperienceView",
+  name: 'ExperienceView',
+  data() {
+    return {
+      experience: [
+        {
+          role: 'Software Engineer',
+          company: 'TWS (The Workshop)',
+          location: 'Madrid, Spain',
+          period: 'Oct 2024 - Present',
+          link: 'https://theworkshop.com/',
+          points: [
+            'Designed and delivered backend services for a high-traffic online gaming platform supporting 10M+ users.',
+            'Implemented a configurable custom messaging rule engine, increasing engagement by 10%.',
+            'Led architectural decomposition of a monolithic fraud detection platform into microservices.',
+            'Migrated operational reporting data from Elasticsearch to PostgreSQL, reducing query latency by 35%.',
+            'Migrated 12+ services from Bamboo to Argo CD and Kubernetes using Helm charts.',
+            'Developed React in-game Deposit bar processing 15K+ daily transactions.',
+          ],
+          tech: ['Java 21', 'Spring Boot', 'PostgreSQL', 'Elasticsearch', 'RabbitMQ', 'Kubernetes', 'Argo CD', 'React', 'Prometheus', 'Grafana', 'Splunk'],
+        },
+        {
+          role: 'Junior Software Engineer',
+          company: 'IGT (International Gaming Technologies)',
+          location: 'Barcelona, Spain',
+          period: 'June 2022 - Nov 2024',
+          link: 'https://www.igt.com/',
+          points: [
+            'Developed high-profile international lottery projects (Toto-Lotto, EuroMillions) serving 2M+ weekly users.',
+            'Maintained platforms handling 500K+ daily transactions with complex bug fixes and feature enhancements.',
+            'Participated in analysis, design, and business logic implementation using Java.',
+            'Developed UI components using Swing.',
+          ],
+          tech: ['Java', 'Swing', 'Spring', 'Oracle DB', 'Agile'],
+        },
+        {
+          role: 'Software Engineer',
+          company: 'Ferchau Engineering',
+          location: 'Barcelona, Spain',
+          period: 'Sept 2021 - Aug 2022',
+          link: 'https://www.ferchau.com/es/en',
+          points: [
+            'Developed multiple desktop applications using C++ and QT/QML framework.',
+            'Integrated C++ with JavaScript, SQL, and Python for complex application logic.',
+            'Collaborated in an Agile environment following ITIL standards.',
+          ],
+          tech: ['C++', 'QT/QML', 'JavaScript', 'Python', 'SQL'],
+        },
+      ],
+      projects: [
+        {
+          title: 'League Pong',
+          description: 'Full-stack application to organize PingPong leagues in Barcelona. Features real-time map of tables and player rankings.',
+          image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/mapleaguepong.png',
+          tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Vue.js', 'Maps API'],
+        },
+        {
+          title: 'Cinema Reservation System',
+          description: 'Complete reservation system with admin panel for managing movies, seats, and pricing.',
+          image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/touristgidehomepage.png',
+          tags: ['Vue.js', 'NestJS', 'MongoDB'],
+        },
+        {
+          title: 'E-Commerce Platform',
+          description: 'Online shopping platform with product management and secure checkout.',
+          image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/laravelecomerce.png',
+          tags: ['Laravel', 'PHP', 'MySQL', 'CSS'],
+        },
+        {
+          title: 'QT Drawing App',
+          description: 'Desktop application for 2D graphics with custom color selection and local file saving.',
+          image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/drawer1.png',
+          tags: ['C++', 'QT', 'QML'],
+        },
+      ],
+    };
+  },
 };
 </script>
-<style>
-.qtr {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
 
-  position: absolute;
-  left: 20%;
-  top: 5%;
-  width: 150%;
-}
-.qtE {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
-  position: absolute;
-  left: 25%;
-  top: 27%;
-  width: 70%;
-}
-.qtE2 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
-  position: absolute;
-  left: 25%;
-  top: 55%;
-  width: 70%;
-}
-.qtr2 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 40%;
-  top: 80%;
-  width: 150%;
-}
-.pro {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 5%;
-  top: 90%;
-  width: 150%;
-}
-.pro2 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 70%;
-  top: 90%;
-  width: 150%;
-}
-.pro3 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 37%;
-  top: 90%;
-  width: 150%;
-}
-.pro4 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 10%;
-  top: 190%;
-  width: 150%;
-}
-.pro5 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 60%;
-  top: 190%;
-  width: 150%;
-}
-.prow {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-  position: absolute;
-  left: 5%;
-  top: 100%;
-  width: 30%;
-}
-.prow2 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-
-  position: absolute;
-  left: 70%;
-  top: 100%;
-  width: 30%;
-}
-.prow3 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-
-  position: absolute;
-  left: 37%;
-  top: 100%;
-  width: 30%;
-}
-.prow4 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-
-  position: absolute;
-  left: 10%;
-  top: 200%;
-  width: 30%;
-}
-.prow5 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-
-  position: absolute;
-  left: 60%;
-  top: 200%;
-  width: 30%;
-}
-.qtr3 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 20%;
-  top: 290%;
-  width: 150%;
-}
-.free {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 20px;
-
-  position: absolute;
-  left: 25%;
-  top: 310%;
-  width: 60%;
-}
-.full {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 20%;
-  top: 320%;
-  width: 150%;
-}
-.full2 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 65%;
-  top: 320%;
-  width: 150%;
-}
-.full3 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 45px;
-  text-decoration: underline;
-
-  position: absolute;
-  left: 40%;
-  top: 430%;
-  width: 150%;
-}
-.fullw {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-  position: absolute;
-  left: 20%;
-  top: 330%;
-  width: 30%;
-}
-.fullw2 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-  position: absolute;
-  left: 65%;
-  top: 330%;
-  width: 30%;
-}
-.fullw3 {
-  font-style: initial;
-  font-weight: 50;
-  font-size: xx-large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-  position: absolute;
-  left: 40%;
-  top: 440%;
-  width: 30%;
-}
-.commerce {
-  position: absolute;
-  left: 30%;
-  top: 460%;
-  width: 50%;
-  height: 40;
-}
-.cinema {
-  position: absolute;
-  left: 20%;
-  top: 350%;
-  width: 40%;
-  height: 50%;
-}
-.leaguepong {
-  position: absolute;
-  left: 65%;
-  top: 350%;
-  width: 30%;
-  height: 10%;
-}
-.flappy {
-  position: absolute;
-  left: 5%;
-  top: 110%;
-  width: 30%;
-  height: 20px;
-}
-.contract {
-  position: absolute;
-  left: 68%;
-  top: 115%;
-  width: 30%;
-  height: 50%;
-}
-.drawing {
-  position: absolute;
-  left: 37%;
-  top: 110%;
-  width: 30%;
-  height: 50%;
-}
-.userSave {
-  position: absolute;
-  left: 10%;
-  top: 210%;
-  width: 30%;
-  height: 20%;
-}
-.tennis {
-  position: absolute;
-  left: 60%;
-  top: 210%;
-  width: 30%;
-  height: 50%;
+<style scoped>
+.text-decoration-none {
+  text-decoration: none;
 }
 </style>
