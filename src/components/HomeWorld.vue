@@ -9,7 +9,7 @@
       </v-col>
       <v-col cols="12" md="8" class="text-center text-md-left">
         <h1 class="display-2 font-weight-bold primary--text mb-2">Dawit Elias Feleke</h1>
-        <h2 class="headline font-weight-medium white--text mb-4">Senior Software Engineer</h2>
+        <h2 class="headline font-weight-medium white--text mb-4">Software Engineer</h2>
         <p class="subtitle-1 white--text mb-6">
           5+ years of experience designing, developing and operating scalable, cloud-native backend systems.
           Specialised in Java, Spring Boot and distributed microservices.
@@ -43,7 +43,7 @@
         <v-card color="secondary" dark class="pa-6">
           <h3 class="headline primary--text mb-4">Professional Summary</h3>
           <p class="body-1 text-justify">
-            Senior Software Engineer with extensive experience in designing, developing and operating scalable, cloud-native backend systems for enterprise and
+            Software Engineer with extensive experience in designing, developing and operating scalable, cloud-native backend systems for enterprise and
             high-traffic platforms. Specialised in Java, Spring Boot and distributed microservices, with experience delivering payment, fraud detection and
             gaming platforms supporting millions of users and high transaction volumes.
           </p>
