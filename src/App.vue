@@ -2,9 +2,9 @@
   <v-app>
     <v-app-bar app color="secondary" dark elevate-on-scroll>
       <v-avatar size="40" class="mr-3">
-        <v-img src="https://raw.githubusercontent.com/leodave/Profile-Pics/main/photo_1.jpeg"/>
+        <v-img src="/Dawit_Elias_circle-optimised_circle.png"/>
       </v-avatar>
-      <v-toolbar-title class="font-weight-bold">Dawit Elias</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold">Dawit Elias Feleke</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn text to="/" class="hidden-sm-and-down">Home</v-btn>
       <v-btn text to="/experience" class="hidden-sm-and-down">Experience</v-btn>
@@ -39,7 +39,7 @@
 
     <v-footer padless color="secondary" dark>
       <v-col class="text-center py-4" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Dawit Elias</strong>
+        <strong>Dawit Elias Feleke</strong>
         <div class="mt-2">
           <v-btn icon href="https://github.com/leodave" target="_blank">
             <v-icon>mdi-github</v-icon>
@@ -47,8 +47,12 @@
           <v-btn icon href="https://www.linkedin.com/in/dawit-elias/" target="_blank">
             <v-icon>mdi-linkedin</v-icon>
           </v-btn>
-          <v-btn icon href="mailto:dawitelias733@gmail.com">
-            <v-icon>mdi-email</v-icon>
+          <v-btn icon href="https://global-pass-front-end-sigma.vercel.app/home" target="_blank">
+            <v-icon>mdi-launch</v-icon>
+          </v-btn>
+          <v-btn icon href="https://docs.google.com/document/d/1F_ssB0SWi2YlZUeJL-yEBA_8RZpsRFBA/edit?usp=sharing&ouid=113978681928025798327&rtpof=true&sd=true"
+                 target="_blank">
+            <v-icon>mdi-file-document</v-icon>
           </v-btn>
         </div>
       </v-col>

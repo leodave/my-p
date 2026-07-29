@@ -9,6 +9,7 @@
           <v-card-title class="primary--text headline">
             <v-icon left color="primary">mdi-school</v-icon>
             {{ edu.institution }}
+            <v-btn x-small text color="primary" :href="edu.link" target="_blank" class="ml-1 px-1">visit</v-btn>
           </v-card-title>
           <v-card-subtitle class="white--text font-weight-bold pt-1">
             {{ edu.degree }}
@@ -52,8 +53,10 @@ export default {
       education: [
         {
           institution: 'Epitech - European Institution of Technology',
+          link: 'https://www.epitech-it.es/en/home',
           degree: 'Full-Stack Web & Mobile Development Bootcamp',
           location: 'Barcelona, Spain',
+          period: 'Past',
           points: [
             'Object Oriented Programming',
             'Data Structure And Algorithms',
@@ -63,8 +66,10 @@ export default {
         },
         {
           institution: 'UoPeople University',
+          link: 'https://uopeople.edu',
           degree: 'B.Sc. in Computer Science',
-          location: 'Online (American Accredited)',
+          location: '(American Accredited)',
+          period: 'Past',
           points: [
             'Enrolled in degree program while working full-time',
             'Focusing on advanced academic foundations and engineering quality',
@@ -72,8 +77,10 @@ export default {
         },
         {
           institution: 'Fundación Esplai',
+          link: 'https://fundacionesplai.org',
           degree: 'Intensive Java Developer Bootcamp',
           location: 'Barcelona, Spain',
+          period: 'Past',
           points: [
             'Advanced Java development & Spring Boot',
             'Agile methodologies and teamwork',

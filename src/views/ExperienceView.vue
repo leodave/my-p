@@ -21,6 +21,7 @@
           </v-card-title>
           <v-card-subtitle class="white--text font-weight-bold pt-1">
             <a :href="job.link" target="_blank" class="primary--text text-decoration-none">{{ job.company }}</a>
+            <v-btn x-small text color="primary" :href="job.link" target="_blank" class="ml-1 px-1">visit</v-btn>
             - {{ job.location }}
           </v-card-subtitle>
           <v-card-text class="white--text">
@@ -46,6 +47,10 @@
           <v-card-title class="primary--text headline">{{ project.title }}</v-card-title>
           <v-card-text>
             <p class="white--text">{{ project.description }}</p>
+            <v-btn v-if="project.repo" small text color="primary" :href="project.repo" target="_blank" class="px-0 mb-2">
+              <v-icon left small>mdi-github</v-icon>
+              Git-hub repo
+            </v-btn>
             <div class="mt-2">
               <v-chip v-for="tag in project.tags" :key="tag" x-small class="ma-1" color="accent" outlined>
                 {{ tag }}
@@ -68,7 +73,7 @@ export default {
           role: 'Software Engineer',
           company: 'TWS (The Workshop)',
           location: 'Madrid, Spain',
-          period: 'Oct 2024 - Present',
+          period: 'Present',
           link: 'https://theworkshop.com/',
           points: [
             'Designed and delivered backend services for a high-traffic online gaming platform supporting 10M+ users.',
@@ -84,7 +89,7 @@ export default {
           role: 'Junior Software Engineer',
           company: 'IGT (International Gaming Technologies)',
           location: 'Barcelona, Spain',
-          period: 'June 2022 - Nov 2024',
+          period: 'Past',
           link: 'https://www.igt.com/',
           points: [
             'Developed high-profile international lottery projects (Toto-Lotto, EuroMillions) serving 2M+ weekly users.',
@@ -98,7 +103,7 @@ export default {
           role: 'Software Engineer',
           company: 'Ferchau Engineering',
           location: 'Barcelona, Spain',
-          period: 'Sept 2021 - Aug 2022',
+          period: 'Past',
           link: 'https://www.ferchau.com/es/en',
           points: [
             'Developed multiple desktop applications using C++ and QT/QML framework.',
@@ -111,27 +116,17 @@ export default {
       projects: [
         {
           title: 'League Pong',
-          description: 'Full-stack application to organize PingPong leagues in Barcelona. Features real-time map of tables and player rankings.',
+          description: 'Full-stack application built with Java Spring Boot and MySQL that allows users to book ping pong games throughout Barcelona. Features Google Maps integration for free ping pong table locations and player rankings.',
+          repo: 'https://github.com/leodave/Complete-Full-Stack-Website-Projects/tree/main/LeaguePong-App-For_Organizing-PingPong-Lagues',
           image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/mapleaguepong.png',
-          tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Vue.js', 'Maps API'],
+          tags: ['Java', 'Spring Boot', 'MySQL', 'Vue.js', 'Google Maps API'],
         },
         {
-          title: 'Cinema Reservation System',
-          description: 'Complete reservation system with admin panel for managing movies, seats, and pricing.',
+          title: 'Tourism Booking App',
+          description: 'A NestJS, MongoDB, and Vue.js application to book visits to tourism places. Includes favorite marking, booking management, and an admin panel for CRUD operations.',
+          repo: 'https://github.com/leodave/Complete-Full-Stack-Website-Projects/tree/main/vuejs-nestTs-mongoDB-cinema-reservation',
           image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/touristgidehomepage.png',
-          tags: ['Vue.js', 'NestJS', 'MongoDB'],
-        },
-        {
-          title: 'E-Commerce Platform',
-          description: 'Online shopping platform with product management and secure checkout.',
-          image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/laravelecomerce.png',
-          tags: ['Laravel', 'PHP', 'MySQL', 'CSS'],
-        },
-        {
-          title: 'QT Drawing App',
-          description: 'Desktop application for 2D graphics with custom color selection and local file saving.',
-          image: 'https://raw.githubusercontent.com/leodave/Profile-Pics/main/drawer1.png',
-          tags: ['C++', 'QT', 'QML'],
+          tags: ['Vue.js', 'NestJS', 'MongoDB', 'Admin Panel'],
         },
       ],
     };
