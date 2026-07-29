@@ -55,61 +55,39 @@
       </v-col>
     </v-row>
 
-    <!-- Featured Projects -->
+    <!-- Featured Project: Global Pass -->
     <v-row class="mb-12">
       <v-col cols="12">
-        <h3 class="headline primary--text mb-6 text-center">Featured Projects</h3>
+        <h3 class="headline primary--text mb-6 text-center">Featured Project</h3>
       </v-col>
       <v-col cols="12">
         <v-card color="secondary" dark class="pa-6" hover>
-          <v-card-title class="primary--text font-weight-bold px-0">
-            <v-icon left color="primary">mdi-ping-pong</v-icon>
-            League Pong (Personal Project)
-          </v-card-title>
-          <p class="body-1 text-justify">
-            League Pong is a full-stack application built with <strong>Java Spring Boot</strong> and <strong>MySQL</strong> that allows users to book ping pong
-            games throughout Barcelona.
-            It features Google Maps integration to display locations where free ping pong tables exist in the city, enabling players to organize leagues and
-            track rankings.
-            <br>
-            <v-btn small text color="primary"
-                   href="https://github.com/leodave/Complete-Full-Stack-Website-Projects/tree/main/LeaguePong-App-For_Organizing-PingPong-Lagues"
-                   target="_blank" class="px-0">
-              <v-icon left small>mdi-github</v-icon>
-              Git-hub repo
-            </v-btn>
-          </p>
-          <v-chip-group>
-            <v-chip small color="primary" outlined>Java Spring Boot</v-chip>
-            <v-chip small color="primary" outlined>MySQL</v-chip>
-            <v-chip small color="primary" outlined>Google Maps API</v-chip>
-            <v-chip small color="primary" outlined>Vue.js</v-chip>
-          </v-chip-group>
-        </v-card>
-      </v-col>
-      <v-col cols="12">
-        <v-card color="secondary" dark class="pa-6" hover>
-          <v-card-title class="primary--text font-weight-bold px-0">
-            <v-icon left color="primary">mdi-map-marker</v-icon>
-            Tourism Booking App (Personal Project)
-          </v-card-title>
-          <p class="body-1 text-justify">
-            A <strong>NestJS</strong>, <strong>MongoDB</strong>, and <strong>Vue.js</strong> application that helps users book visits to tourism places.
-            It allows users to mark favorites, manage bookings, and includes a comprehensive admin panel for CRUD operations on users and locations.
-            <br>
-            <v-btn small text color="primary"
-                   href="https://github.com/leodave/Complete-Full-Stack-Website-Projects/tree/main/vuejs-nestTs-mongoDB-cinema-reservation" target="_blank"
-                   class="px-0">
-              <v-icon left small>mdi-github</v-icon>
-              Git-hub repo
-            </v-btn>
-          </p>
-          <v-chip-group>
-            <v-chip small color="primary" outlined>NestJS</v-chip>
-            <v-chip small color="primary" outlined>MongoDB</v-chip>
-            <v-chip small color="primary" outlined>Vue.js</v-chip>
-            <v-chip small color="primary" outlined>Admin Panel</v-chip>
-          </v-chip-group>
+          <v-row align="center">
+            <v-col cols="12" md="4">
+              <v-img src="/global-pass.png" class="rounded-lg elevation-6" max-height="300"></v-img>
+            </v-col>
+            <v-col cols="12" md="8">
+              <v-card-title class="primary--text font-weight-bold px-0 pt-0">
+                <v-icon left color="primary">mdi-earth</v-icon>
+                Global Pass
+              </v-card-title>
+              <p class="body-1 text-justify">
+                Global Pass is a fintech platform designed to help Ethiopians pay for international services such as tuition fees, subscriptions, and online
+                shopping.
+                The application simplifies cross-border payments by allowing users to pay via local methods like Telebirr or CBE, while Global Pass handles the
+                international transaction.
+              </p>
+              <v-btn color="primary" class="black--text mt-2" href="https://global-pass-front-end-sigma.vercel.app/home" target="_blank">
+                <v-icon left>mdi-launch</v-icon>
+                Visit Global Pass
+              </v-btn>
+              <v-chip-group class="mt-4">
+                <v-chip small color="primary" outlined>Vue.js</v-chip>
+                <v-chip small color="primary" outlined>Fintech</v-chip>
+                <v-chip small color="primary" outlined>Payment Gateway</v-chip>
+              </v-chip-group>
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>

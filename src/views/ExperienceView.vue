@@ -47,6 +47,10 @@
           <v-card-title class="primary--text headline">{{ project.title }}</v-card-title>
           <v-card-text>
             <p class="white--text">{{ project.description }}</p>
+            <v-btn v-if="project.link" small text color="primary" :href="project.link" target="_blank" class="px-0 mb-2 mr-2">
+              <v-icon left small>mdi-launch</v-icon>
+              Visit Project
+            </v-btn>
             <v-btn v-if="project.repo" small text color="primary" :href="project.repo" target="_blank" class="px-0 mb-2">
               <v-icon left small>mdi-github</v-icon>
               Git-hub repo
@@ -114,6 +118,13 @@ export default {
         },
       ],
       projects: [
+        {
+          title: 'Global Pass',
+          description: 'A fintech platform helping Ethiopians pay for international services like tuition, subscriptions, and shopping via local payment methods like Telebirr and CBE.',
+          link: 'https://global-pass-front-end-sigma.vercel.app/home',
+          image: '/global-pass.png',
+          tags: ['Vue.js', 'Fintech', 'Payment Gateway'],
+        },
         {
           title: 'League Pong',
           description: 'Full-stack application built with Java Spring Boot and MySQL that allows users to book ping pong games throughout Barcelona. Features Google Maps integration for free ping pong table locations and player rankings.',
